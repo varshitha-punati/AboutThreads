@@ -4,10 +4,10 @@
 package com.threads;
 
 public class ThreadDemo {
+	
 	public static void main(String[] args) {
-		
 		System.out.println("main thread");
-		System.out.println("Thread name:"+Thread.currentThread().getName());
+		System.out.println("Thread name:"+Thread.currentThread());
 
 	Tests thread=new Tests();
 //	thread.show();
@@ -33,5 +33,6 @@ class Tests extends Thread{
 		}
 		
 	}
+	
 	
 }

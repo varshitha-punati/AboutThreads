@@ -1,27 +1,36 @@
 package com.threads;
 
 public class ThreadLifeCycle {
-public static void main(String[] args) {
+public static void main(String[] args) throws InterruptedException {
 	
 	// Both the  threads are in runnable state
 	ThreadTest t=new ThreadTest();
+	t.setPriority(6);
+	
+	//The thread is in new born state
 	ThreadSample t1=new ThreadSample();
+	t1.setPriority(6);
 	
 	System.out.println(t.getState());
 	//ThreadTest is in running State
 	t.start();
+	t1.start();
+	System.out.println(t.currentThread().getName()+":getstate:"+t.getState());
 	
-	System.out.println(t.getState());
 	//Move control to another thread
-//			t.yield();	
-			
+			t.yield();	
 			System.out.println(t.getState());
+//			
+			System.out.println(t.getState());
+//			t1.join();
 			
 //			//Blocked State of thread B
-			System.out.println("t1 state is:"+t1.getState());
+//			System.out.println("t1 state is:"+t1.getState());
 			
-			t1.start();
-			System.out.println("t1 state is:"+t1.getState());
+			
+			
+//			System.out.println("t1 state is:"+t1.getState());
+			//timewaiting state of t
 			System.out.println(t.getState());
 			System.out.println();
 }
@@ -41,6 +50,7 @@ class ThreadTest extends Thread{
 			}
 	}
 		System.out.println("first thread is completed");
+	
 	}
 }     
 	class ThreadSample extends Thread{

@@ -4,15 +4,15 @@ public class ThreadMethod {
 	public static void main(String[] args) {
 		
 		//creating object
-		Sample thread=new Sample();
+		SampleTestCase thread=new SampleTestCase();
 	
 		//currentThread: Returns a reference to the currently executing thread object
-		System.out.println("current thread:"+Sample.currentThread());
+		System.out.println("current thread:"+SampleTestCase.currentThread());
 		
 //		getName:This method is used to return the name of this thread.
 //		->This method is not static so this method is accessible with 
 //		->Thread class object it is not accessible with the class name.
-		System.out.println("current thread name:"+Sample.currentThread().getName());
+		System.out.println("current thread name:"+SampleTestCase.currentThread().getName());
 		
 //		This method is used to check whether the current thread is a daemon thread.
 //		Daemon thread is the thread which runs in the background.
@@ -38,11 +38,11 @@ public class ThreadMethod {
 		System.out.println("Thread name:"+thread.getName());
 		
 //		It returns the number of active threads in the current thread's thread group.
-		System.out.println("Thread active Count:"+Sample.activeCount());
+		System.out.println("Thread active Count:"+SampleTestCase.activeCount());
 //	The getStackTrace() method of thread class returns an array of stack trace elements 
 		System.out.println("thread stackTrace:"+thread.getStackTrace());
 //This method is used to return a Map of stack traces for all the existing or live threads.
-		System.out.println(Sample.getAllStackTraces());
+		System.out.println(SampleTestCase.getAllStackTraces());
 		
 		System.out.println("thread id:"+thread.getId());
 		

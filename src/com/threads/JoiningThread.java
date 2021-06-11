@@ -1,15 +1,16 @@
 package com.threads;
-
+import java.lang.InterruptedException;
 public class JoiningThread extends Thread {
 	public static void main(String[] args) throws InterruptedException {
 		
 		JoiningThread thread=new JoiningThread();
+		JoiningThread thread1=new JoiningThread();
 		
 		thread.start();
-		thread.join();
 		
-		test thread1=new test();
-		thread1.start();
+		thread.join();
+	
+		thread1.start();  
 		
 		System.out.println("isAlive:"+thread.isAlive());
 	}
@@ -21,11 +22,4 @@ public class JoiningThread extends Thread {
 		System.out.println("thread1 ended");
 	}
 }
-class test extends Thread{
-	
-	public void run() {
-		System.out.println("thread 2 started");
-		System.out.println("in thread 2");
-		System.out.println("thread 2 ended");
-	}
-}
+
